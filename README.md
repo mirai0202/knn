@@ -1,6 +1,6 @@
 # Mini project: KNN
 
-**All datasets are stored in 'datasets' folder.
+**All datasets are stored in 'datasets' folder.**
 
 main.py -  takes 3 arguments:
 * k: positive natural number being the k-NN hyperparameter.
