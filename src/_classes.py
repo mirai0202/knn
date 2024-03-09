@@ -17,7 +17,9 @@ class KNN:
             return self.y.iloc[self.distance(x).nsmallest(self.k).index].mode()[0]
         return X.apply(_predict, axis=1)
 
-    def distance(self, x: pd.Series) -> pd.Series:
+    def distance(self, x: pd.Series) -> pd.Series | ValueError:
+        if len(x) != len(self.X.columns):
+            raise ValueError('Shape mismatch')
         return np.sqrt(np.sum((self.X - x) ** 2, axis=1)).rename('distance')
 
 
